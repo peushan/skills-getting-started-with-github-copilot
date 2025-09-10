@@ -1,4 +1,13 @@
-"""
+"""Mergington High School Extracurricular
+Activities:
+    - Chess Club: For students interested in learning chess strategies and competing in tournaments.
+    - Programming Class: For students who want to learn programming fundamentals and build software projects.
+    - Gym Class: For students who want to participate in physical education and sports activities.
+
+Endpoints:
+    - GET /: Redirects to the static index.html page.
+    - GET /activities: Returns the list of available extracurricular activities and their details.
+    - POST /activities/{activity_name}/signup: Allows a student to sign up for a specific activity by providing their email address.
 High School Management System API
 
 A super simple FastAPI application that allows students to view and sign up
@@ -18,6 +27,7 @@ app = FastAPI(title="Mergington High School API",
 current_dir = Path(__file__).parent
 app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
           "static")), name="static")
+
 
 # In-memory activity database
 
